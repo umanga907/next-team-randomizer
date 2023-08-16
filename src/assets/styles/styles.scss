@@ -1,0 +1,166 @@
+// styles.module.scss
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0; // 1
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  background: #f5f7fa;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 15px;
+}
+p {
+  margin-bottom: 15px;
+}
+.container {
+  display: flex;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  textarea,
+  input {
+    padding: 8px 16px;
+    margin-bottom: 15px;
+    width: 300px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    transition: border-color 0.2s;
+    &:focus {
+      border-color: #4c51bf;
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #4c51bf;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #3730a3;
+    }
+  }
+
+  .teams {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .team {
+      flex: 1 0 calc(25% - 10px); /* take 1/3 of the width minus the gap */
+
+      padding: 10px;
+      border-radius: 6px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex-grow: 1;
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #4c51bf;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+$spacing: 0;
+@while $spacing < 100 {
+  .p-#{$spacing} {
+    padding: $spacing + px !important;
+  }
+  .pt-#{$spacing},
+  .py-#{$spacing} {
+    padding-top: $spacing + px !important;
+  }
+  .pb-#{$spacing},
+  .py-#{$spacing} {
+    padding-bottom: $spacing + px !important;
+  }
+  .pl-#{$spacing},
+  .px-#{$spacing} {
+    padding-left: $spacing + px !important;
+  }
+  .pr-#{$spacing},
+  .px-#{$spacing} {
+    padding-right: $spacing + px !important;
+  }
+  .mt-#{$spacing},
+  .my-#{$spacing} {
+    margin-top: $spacing + px !important;
+  }
+  .mb-#{$spacing},
+  .my-#{$spacing} {
+    margin-bottom: $spacing + px !important;
+  }
+  .ml-#{$spacing},
+  .mx-#{$spacing} {
+    margin-left: $spacing + px !important;
+  }
+  .mr-#{$spacing},
+  .mx-#{$spacing} {
+    margin-right: $spacing + px !important;
+  }
+  $spacing: $spacing + 5;
+}
+
+@for $i from 1 through 20 {
+  .gap-#{$i} {
+    gap: #{$i}px !important;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.text-success {
+  color: #479534 !important;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
